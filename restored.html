@@ -16,62 +16,105 @@
 
 <div class="phone">
 
-<div class="status">
-<span>09:41</span>
-<span>📶 🔋100%</span>
-</div>
+    <div class="status">
+        <span>09:41</span>
+        <span>📶 🔋100%</span>
+    </div>
 
-<h1>SecureCare</h1>
+    <h1>SecureCare</h1>
 
-<div class="warning">
+    <div class="warning">
 
-🔑 System Recovery
+        🔑 Master Security Key
 
-</div>
+    </div>
 
-<p>
+    <div class="list">
 
-Enter the <strong>Master Security Key</strong> exactly as shown on the recovery card.
+        <div>
 
-</p>
+            <strong>👤 THE ARCHITECT</strong>
 
-<input
-id="key"
-type="text"
-placeholder="Enter Security Key">
+            <br><br>
 
-<button onclick="checkKey()">
+            I have to admit...
 
-Restore Systems
+            <br><br>
 
-</button>
+            You were far more capable than I expected.
 
-<p id="result"></p>
+            <br><br>
+
+            You've followed every clue.
+
+            <br>
+
+            Solved every challenge.
+
+            <br>
+
+            Exposed every mistake.
+
+            <br><br>
+
+            As promised...
+
+            <br><br>
+
+            I'll give you one chance to restore SecureCare.
+
+            <br><br>
+
+            Enter the <strong>Master Security Key</strong> exactly as it appears on the recovery card.
+
+            <br><br>
+
+            One mistake...
+
+            <br><br>
+
+            ...and everything stays encrypted.
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <input
+        id="key"
+        type="text"
+        placeholder="Enter Master Security Key"
+        autocomplete="off">
+
+    <br><br>
+
+    <button onclick="checkKey()">
+
+        🔓 Restore Systems
+
+    </button>
+
+    <p id="result"></p>
 
 </div>
 
 <script>
 
-function checkKey(){
+function checkKey() {
 
     var key = document.getElementById("key").value.trim();
 
-    if(key === "8J4Q-MP92-LX71"){
+    if (key === "8J4Q-MP92-LX71") {
 
         window.location.href = "recovery.html";
 
-    }
-
-    else{
+    } else {
 
         document.getElementById("result").innerHTML =
-        "<br><strong>❌ INVALID KEY</strong><br><br><em>The Architect: \"Close... but not quite. Try entering it exactly as shown on the recovery card.\"</em>";
+        "<br><strong>❌ INVALID MASTER SECURITY KEY</strong><br><br><em>The Architect: \"Close... but not quite. Try entering it exactly as shown on the recovery card.\"</em>";
 
     }
-
-}
-
-}
 
 }
 
