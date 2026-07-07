@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>SecureCare - Photos</title>
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -27,25 +29,14 @@
 
     <div class="gallery">
 
-<img src="images/18.png"
-onclick="openPhoto(this.src,'Walk with Max','📍 Williamson Park, Lancaster','Today • 18:42')">
+        <img src="18.png" onclick="openPhoto(0)">
+        <img src="19.png" onclick="openPhoto(1)">
+        <img src="20.png" onclick="openPhoto(2)">
+        <img src="21.png" onclick="openPhoto(3)">
+        <img src="22.png" onclick="openPhoto(4)">
+        <img src="23.png" onclick="openPhoto(5)">
 
-<img src="images/19.png"
-onclick="openPhoto(this.src,'Graduation Day','📍 Edge Hill University','24 July 2026')">
-
-<img src="images/20.png"
-onclick="openPhoto(this.src,'Family BBQ','📍 Mum & Dad''s House','Sunday • 13:15')">
-
-<img src="images/21.png"
-onclick="openPhoto(this.src,'Liverpool Match','📍 Anfield Stadium','12 March 2026')">
-
-<img src="images/22.png"
-onclick="openPhoto(this.src,'Max ❤️','📍 Home','Yesterday • 08:31')">
-
-<img src="images/23.png"
-onclick="openPhoto(this.src,'Weekend Walk','📍 Lake District','2 Weeks Ago')">
-
-</div>
+    </div>
 
     <div class="list">
 
@@ -55,15 +46,11 @@ onclick="openPhoto(this.src,'Weekend Walk','📍 Lake District','2 Weeks Ago')">
 
             <em>
 
-            "Funny, isn't it?
+            "You locked your phone...
 
             <br><br>
 
-            People carefully hide their passwords...
-
-            <br><br>
-
-            ...then tell the world everything else."
+            ...but left your entire life online."
 
             </em>
 
@@ -72,10 +59,130 @@ onclick="openPhoto(this.src,'Weekend Walk','📍 Lake District','2 Weeks Ago')">
     </div>
 
     <a href="phone.html">
+
         ⬅ Return to Home
+
     </a>
 
 </div>
+
+<!-- Photo Viewer -->
+
+<div id="viewer">
+
+<button class="close" onclick="closePhoto()">✕</button>
+
+<img id="viewerImage">
+
+<h2 id="viewerTitle"></h2>
+
+<p id="viewerLocation"></p>
+
+<p id="viewerDate"></p>
+
+<div class="viewerButtons">
+
+<button onclick="previousPhoto()">◀</button>
+
+<button onclick="nextPhoto()">▶</button>
+
+</div>
+
+</div>
+
+<script>
+
+const photos=[
+
+{
+src:"18.png",
+title:"Evening Walk with Max",
+location:"📍 Williamson Park, Lancaster",
+date:"Today • 18:42"
+},
+
+{
+src:"19.png",
+title:"Graduation Day",
+location:"📍 Edge Hill University",
+date:"24 July 2026"
+},
+
+{
+src:"20.png",
+title:"Night Out",
+location:"📍 Lancaster",
+date:"Friday • 22:11"
+},
+
+{
+src:"21.png",
+title:"Nan & Grandad",
+location:"📍 Family Album",
+date:"Scanned Photo"
+},
+
+{
+src:"22.png",
+title:"Forest Walk",
+location:"📍 Lake District",
+date:"Last Weekend"
+},
+
+{
+src:"23.png",
+title:"Liverpool Match",
+location:"📍 Anfield",
+date:"March 2026"
+}
+
+];
+
+let current=0;
+
+function openPhoto(index){
+
+current=index;
+
+document.getElementById("viewer").style.display="flex";
+
+document.getElementById("viewerImage").src=photos[index].src;
+
+document.getElementById("viewerTitle").innerHTML=photos[index].title;
+
+document.getElementById("viewerLocation").innerHTML=photos[index].location;
+
+document.getElementById("viewerDate").innerHTML=photos[index].date;
+
+}
+
+function closePhoto(){
+
+document.getElementById("viewer").style.display="none";
+
+}
+
+function nextPhoto(){
+
+current++;
+
+if(current>=photos.length) current=0;
+
+openPhoto(current);
+
+}
+
+function previousPhoto(){
+
+current--;
+
+if(current<0) current=photos.length-1;
+
+openPhoto(current);
+
+}
+
+</script>
 
 </body>
 
