@@ -480,3 +480,148 @@ a:hover{
     border-color:#007AFF;
 
 }
+/* ===========================
+   PHOTO GALLERY
+=========================== */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin:25px 0;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:170px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.2s;
+
+border:2px solid #3a3a3a;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+border-color:#007AFF;
+
+}
+
+/* ===========================
+   PHOTO VIEWER
+=========================== */
+
+#viewer{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#000;
+
+z-index:999;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+#viewer img{
+
+max-width:95%;
+
+max-height:65%;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+}
+
+#viewer h2{
+
+font-size:32px;
+
+margin-bottom:10px;
+
+}
+
+#viewer p{
+
+font-size:20px;
+
+color:#bbb;
+
+margin-bottom:10px;
+
+}
+
+.close{
+
+position:absolute;
+
+top:20px;
+
+right:25px;
+
+font-size:42px;
+
+background:none;
+
+border:none;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.viewerButtons{
+
+display:flex;
+
+gap:20px;
+
+margin-top:20px;
+
+}
+
+.viewerButtons button{
+
+width:70px;
+
+height:70px;
+
+font-size:30px;
+
+border-radius:50%;
+
+}
