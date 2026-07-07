@@ -424,3 +424,18 @@ a:hover{
 
 }
 }
+/* ===========================================
+   APP PAGES (Mail, Files, Browser etc.)
+=========================================== */
+
+.phone.app{
+
+    min-height:auto;
+
+    height:auto;
+
+    max-height:none;
+
+    padding-bottom:25px;
+
+}
