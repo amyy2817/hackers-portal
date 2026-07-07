@@ -54,17 +54,22 @@ Restore Systems
 
 function checkKey(){
 
-var key=document.getElementById("key").value.trim();
+    var key = document.getElementById("key").value.trim();
 
-if(key==="7F9K-XQ28-RM61"){
+    if(key === "7F9K-XQ28-RM61"){
 
-window.location.href="recovery.html";
+        window.location.href = "recovery.html";
+
+    }
+
+    else{
+
+        document.getElementById("result").innerHTML =
+        "<br><strong>❌ INVALID KEY</strong><br><br><em>The Architect: \"Close... but not quite. Try entering it exactly as shown.\"</em>";
+
+    }
+
 }
-
-else{
-
-document.getElementById("result").innerHTML=
-"❌ Invalid Recovery Key.<br><br><em>Nice try... but that's not the one I left behind.</em>";
 
 }
 
