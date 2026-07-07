@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>System Recovery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="status">
+<span>09:41</span>
+<span>📶 🔋100%</span>
+</div>
+
+<h1>SecureCare</h1>
+
+<div class="warning">
+
+🔑 System Recovery
+
+</div>
+
+<p>
+
+Enter the <strong>Master Security Key</strong> exactly as shown on the recovery card.
+
+</p>
+
+<input
+id="key"
+type="text"
+placeholder="Enter Security Key">
+
+<button onclick="checkKey()">
+
+Restore Systems
+
+</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function checkKey(){
+
+var key=document.getElementById("key").value.trim();
+
+if(key==="7F9K-XQ28-RM61"){
+
+window.location.href="restored.html";
+
+}
+
+else{
+
+document.getElementById("result").innerHTML=
+"❌ Invalid Recovery Key.<br><br><em>Nice try... but that's not the one I left behind.</em>";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
